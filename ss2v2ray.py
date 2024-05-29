@@ -28,7 +28,7 @@ def generate_v2ray_config(servers):
                 "protocol": "socks",
                 "settings": {
                     "auth": "noauth",
-                    "udp": False
+                    "udp": True
                 }
             }
         ],

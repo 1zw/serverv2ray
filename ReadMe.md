@@ -22,8 +22,9 @@ $ chmod +x ~/start_v2ray.sh
 ```
 - 在你的应用程序或系统中设置代理，指向 V2Ray 的监听端口（默认是 1080）,添加到~/.bashrc中
 ```bashrc
-export http_proxy=http://127.0.0.1:1080
-export https_proxy=http://127.0.0.1:1080
+export http_proxy="http://127.0.0.1:1080"
+export https_proxy="http://127.0.0.1:1080"
+export ALL_PROXY="socks5://127.0.0.1:1080"
 ```
 - 单独配置git 
 ```bash
@@ -38,7 +39,11 @@ $ git config --global --unset https.proxy
 ```bash 
 $ ~/start_v2ray.sh
 ```
-成功如下图所示
+成功开启v2ray脚本如下图所示
 ![](./assets/success.png)
-
+另开一个终端，输入下面指令，成功访问谷歌
+```bash
+$ curl -x socks5://127.0.0.1:1080 -I http://www.google.com
+```
+![](./assets/succ_google.png)
 
