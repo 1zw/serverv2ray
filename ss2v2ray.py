@@ -30,11 +30,25 @@ def generate_v2ray_config(servers):
                     "auth": "noauth",
                     "udp": True
                 }
+            },
+            {
+            "port": 8888,
+            "listen": "127.0.0.1",
+            "protocol": "http",
+            "settings": {
+                "timeout": 0
             }
+        }
         ],
         "outbounds": [],
         "routing": {
-            "rules": []
+            "rules": [
+            {
+                "type": "field",
+                "outboundTag": "server2",
+                "domain": ["geosite:geolocation-!cn"]
+            }
+        ]
         }
     }
 

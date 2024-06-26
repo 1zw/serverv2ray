@@ -22,7 +22,9 @@ $ chmod +x ~/start_v2ray.sh
 ```
 - 在你的应用程序或系统中设置代理，指向 V2Ray 的监听端口（默认是 1080）,添加到~/.bashrc中
 ```bashrc
-export ALL_PROXY="socks5://127.0.0.1:1080"
+export ALL_PROXY="socks5://127.0.0.1:1080" # socks5协议
+export HTTP_PROXY="http://127.0.0.1:8888" # http协议
+export HTTPS_PROXY="http://127.0.0.1:8888" # http协议
 ```
 - 单独配置git 
 ```bash
